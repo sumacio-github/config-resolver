@@ -35,9 +35,15 @@ public final class FileReader {
     public static String readFromInputStream(InputStream inputStream) throws IOException {
         var stringBuilder = new StringBuilder();
         try (var bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
+            var firstLine = true;
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line).append("\n");
+                if (firstLine) {
+                    firstLine = false;
+                } else {
+                    stringBuilder.append("\n");
+                }
+                stringBuilder.append(line);
             }
         }
         return stringBuilder.toString();
