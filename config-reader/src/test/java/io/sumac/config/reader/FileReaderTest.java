@@ -8,7 +8,7 @@ public class FileReaderTest {
 
     @Test
     public void testReadFromRemoteFile() throws IOException {
-        var output = FileReader.readFromRemoteFile("https://raw.githubusercontent.com/sumacio-github/configuration-converter/master/src/test/resources/sample.properties");
+        var output = FileReader.readFromRemoteFile("https://raw.githubusercontent.com/sumacio-github/config-resolver/master/config-reader/src/test/resources/sample.properties");
         System.out.println(output);
     }
 }
